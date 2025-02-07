@@ -5,7 +5,7 @@ from src import carga as ca
 from src import variables as va
 
 # TEST EDA ✔
-# 🚨 Comprobar ruta del archivo buscado en funcion de ubicacion de main
+
 df = eda.extraer_datos_csv("datos/bruto/Bank_Customer_Churn_Prediction.csv")
 
 eda.revisar_estructura(df)
@@ -18,11 +18,11 @@ eda.obtener_estadisticas(df)
 
 eda.revisar_valores_unicos(df)
 
-# TEST TRANSFORMACION ✔
+# TEST TRANSFORMACION - WIP
 df.rename(columns=va.columnas_renombradas, inplace=True)
 
 df = tr.transformar_binarios(df, va.columnas_binarias)
 
-# Verificar resultado final
-display(df.head())
+tr.generar_boxplots(df)
+
 # %%
