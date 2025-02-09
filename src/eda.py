@@ -1,5 +1,8 @@
 import os
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from src import variables as va
 
 
 def extraer_datos_csv(ruta):
@@ -15,15 +18,20 @@ def extraer_datos_csv(ruta):
     if not os.path.exists(ruta):
         print(f"⚠ Error: El archivo '{ruta}' no existe.")
         return None  # Retornar None si el archivo no existe
-    
+
     try:
         df = pd.read_csv(ruta)
-        print(f"✅ Datos extraidos correctamente. Filas: {df.shape[0]}, Columnas: {df.shape[1]}")
+        print(
+            f"✅ Datos extraidos correctamente. Filas: {df.shape[0]}, Columnas: {df.shape[1]}"
+        )
         display(df.head())  # Mostrar las primeras filas
         return df
-    except Exception as e:  # Capturar posibles errores inesperados y guardarlos en la variable e
+    except (
+        Exception
+    ) as e:  # Capturar posibles errores inesperados y guardarlos en la variable e
         print(f"⚠ Error al extraer el archivo: {e}")
         return None
+
 
 def revisar_estructura(df):
     """
@@ -47,8 +55,11 @@ def revisar_estructura(df):
 
     # Identificar duplicados
     duplicados = df.duplicated().sum()
-    print(f"📌 Datos duplicados: {duplicados} ({round(duplicados / df.shape[0] * 100, 2)}%)\n")
-    
+    print(
+        f"📌 Datos duplicados: {duplicados} ({round(duplicados / df.shape[0] * 100, 2)}%)\n"
+    )
+
+
 def get_duplicate_rows(df):
     """
     Encuentra y devuelve las filas duplicadas completas de un DataFrame.
@@ -60,14 +71,15 @@ def get_duplicate_rows(df):
         pd.DataFrame: DataFrame con las filas duplicadas.
     """
     duplicate_rows = df[df.duplicated(keep=False)]
-    
+
     if duplicate_rows.empty:
         print("✅ No hay filas duplicadas en el dataset.")
     else:
         print(f"⚠ Hay {duplicate_rows.shape[0]} filas duplicadas en el dataset.")
         display(duplicate_rows)
-    
+
     return duplicate_rows
+
 
 def revisar_valores_nulos(df):
     """
@@ -83,21 +95,29 @@ def revisar_valores_nulos(df):
     porcentaje_nulos = round((nulos / len(df)) * 100, 2)
     no_nulos = df.notna().sum()
     porcentaje_no_nulos = round((no_nulos / len(df)) * 100, 2)
-    
-    df_nulos = pd.DataFrame({
-        "Valores nulos": nulos, 
-        "% Nulos": porcentaje_nulos.astype(str) + "%", # astype(str) para convertir float a str y poder concatenar con %
-        "% No Nulos": porcentaje_no_nulos.astype(str) + "%",
-        "Valores Unicos": df.nunique(),
-        "Tipo de Dato": df.dtypes
-    })
 
-    print(f"📌 Columnas con valores nulos: {len(df_nulos[df_nulos['Valores nulos'] > 0])}")
-    print(f"📌 Columnas sin valores nulos: {len(df_nulos[df_nulos['Valores nulos'] == 0])}")
-    
+    df_nulos = pd.DataFrame(
+        {
+            "Valores nulos": nulos,
+            "% Nulos": porcentaje_nulos.astype(str)
+            + "%",  # astype(str) para convertir float a str y poder concatenar con %
+            "% No Nulos": porcentaje_no_nulos.astype(str) + "%",
+            "Valores Unicos": df.nunique(),
+            "Tipo de Dato": df.dtypes,
+        }
+    )
+
+    print(
+        f"📌 Columnas con valores nulos: {len(df_nulos[df_nulos['Valores nulos'] > 0])}"
+    )
+    print(
+        f"📌 Columnas sin valores nulos: {len(df_nulos[df_nulos['Valores nulos'] == 0])}"
+    )
+
     display(df_nulos[df_nulos["Valores nulos"] > 0])  # Muestra solo columnas con nulos
-    
+
     return df_nulos
+
 
 def obtener_estadisticas(df):
     """
@@ -114,7 +134,8 @@ def obtener_estadisticas(df):
 
     print("\n📌 Estadisticas descriptivas de variables categoricas:")
     display(df.describe(include="O").T)  # O = Object (cadenas de texto)
-    
+
+
 def revisar_valores_unicos(df):
     """
     Muestra los valores unicos y sus frecuencias en cada variable categorica.
@@ -125,15 +146,59 @@ def revisar_valores_unicos(df):
     Retorna:
         None
     """
-    columnas_categoricas = df.select_dtypes(include='object').columns.tolist()
-    
+    columnas_categoricas = df.select_dtypes(include="object").columns.tolist()
+
     if not columnas_categoricas:
         print("✅ No hay columnas categoricas en el dataset.")
         return
-    
+
     print("📌 Analisis de valores unicos en variables categoricas:\n")
-    
+
     for columna in columnas_categoricas:
         print(f"\n----------- ANALIZANDO: '{columna.upper()}' -----------\n")
         print(f"Valores unicos: {df[columna].unique()}\n")
-        print(f"Frecuencia de valores:\n{df[columna].value_counts()}\n")    
+        print(f"Frecuencia de valores:\n{df[columna].value_counts()}\n")
+
+
+def transformar_binarios(df, columnas):
+    """
+    Convierte valores binarios (1 y 0) a 'Si' y 'No' respectivamente en las columnas especificadas.
+
+    Parametros:
+        df (pd.DataFrame): DataFrame con los datos.
+        columnas (list): Lista de columnas a transformar.
+
+    Retorna:
+        pd.DataFrame: DataFrame con valores transformados.
+    """
+    for col in columnas:
+        # Verificar si la columna tiene valores binarios antes de aplicar la transformacion
+        if df[col].isin([0, 1]).all():
+            df[col] = df[col].map(va.mapeo_binario)
+    return df
+
+
+def generar_boxplots(df):
+    """
+    Genera y guarda una imagen .jpg de los boxplots para las variables numericas definidas en variables.py en una sola fila con separacion.
+
+    Parametros:
+        df (pd.DataFrame): DataFrame con los datos.
+
+    Retorna:
+        None: Muestra los boxplots de las variables numericas en un formato alineado.
+    """
+    fig, axes = plt.subplots(
+        nrows=1, ncols=len(va.variables_numericas), figsize=(20, 5)
+    )  # 1 fila, 4 columnas
+
+    # Generar cada boxplot
+    for i, col in enumerate(va.variables_numericas):
+        sns.boxplot(y=df[col], color="turquoise", ax=axes[i])
+        axes[i].set_title(f"Boxplot de {col}")
+
+    plt.subplots_adjust(wspace=0.4)  # Aumentar espacio entre graficas
+    plt.savefig(
+        "imagenes/boxplots_var_numericas.jpg", bbox_inches="tight", pad_inches=0.2
+    )
+    plt.show()
