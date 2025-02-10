@@ -20,5 +20,5 @@ mapeo_binario = {1: "Si", 0: "No"}
 # Columnas con valores binarios a transformar
 columnas_binarias = ["tarjeta_credito", "miembro_activo", "abandono"]
 
-# Variables numericas a analizar con boxplots
-variables_numericas = ["puntacion_credito", "edad", "saldo", "salario_estimado"]
+# Variables numericas a analizar
+var_numericas = ["puntacion_credito", "edad", "saldo", "salario_estimado"]
