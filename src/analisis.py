@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def generar_histogramas_kde(df, ruta_guardado="imagenes/"):
+def generar_histogramas_kde(df, ruta_guardado):
     """
     Genera histogramas con KDE para las variables numericas clave definidas en variables.py.
     Crea carpeta de guardado si no existe
