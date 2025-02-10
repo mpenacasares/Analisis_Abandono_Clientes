@@ -21,4 +21,4 @@ mapeo_binario = {1: "Si", 0: "No"}
 columnas_binarias = ["tarjeta_credito", "miembro_activo", "abandono"]
 
 # Variables numericas a analizar
-var_numericas = ["puntacion_credito", "edad", "saldo", "salario_estimado"]
+var_numericas = ["puntacion_credito", "edad", "saldo", "salario_estimado", "antiguedad", "num_productos"]

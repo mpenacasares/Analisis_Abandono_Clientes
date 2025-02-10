@@ -39,6 +39,17 @@ A continuación, se presentan las distribuciones de las principales variables nu
 - **Distribución uniforme**, indicando que el banco atiende a clientes de distintos niveles salariales.
 - No hay valores atípicos en esta variable.
 
+### 🔹 **Distribución de antigüedad**
+
+- Distribución **uniforme**, sin grandes variaciones entre años.
+- **Sin valores atípicos**, lo que indica estabilidad en la captación de clientes.
+- No hay una concentración clara en ciertos rangos de antigüedad.
+
+### 🔹 **Distribución de número de productos**
+
+- **Distribución multimodal**, con picos en **1, 2 y 3 productos**.
+- La mayoría de clientes tienen **1 o 2 productos**, mientras que los que tienen **4 productos** son pocos y pueden representar un segmento especial.
+
 ---
 
 ## 1.2️. Análisis de valores atípicos (Boxplots)
@@ -72,16 +83,31 @@ A continuación, se presentan los boxplots de las variables analizadas:
 - No presenta valores atípicos.
 - Se mantiene la distribución homogénea observada en los histogramas.
 
+### 🔹 **Boxplots de antigüedad**
+
+- **Sin valores extremos** ni anomalías en la distribución.
+- Esto indica que el banco ha estado adquiriendo clientes de manera constante a lo largo del tiempo.
+
+### 🔹 **Boxplots de número de productos**
+
+- **Clientes con 4 productos aparecen como valores atípicos**, lo que podría indicar un grupo de alto valor.
+- Los clientes con menos productos pueden ser **más propensos al abandono**.
+
 ---
 
-📌 **Basándonos en los análisis anteriores, el perfil general del cliente del banco es el siguiente:**
+📌 **Basándonos en los análisis anteriores y las estadísticas descriptivas de las variables categóricas, el perfil general del cliente del banco es el siguiente:**
 
-✅ **Edad promedio:** Entre **30 y 50 años**, siendo 39 años la edad media.
+✅ **Edad promedio:** Entre **30 y 50 años**, siendo 39 años la edad media.  
 ✅ **Saldo promedio:** Alrededor de **100.000**, aunque existe un grupo con saldo **0**.  
 ✅ **Puntuación de crédito promedio:** Entre **600 y 750**, con pocos clientes de alto riesgo.  
-✅ **Salario estimado:** Distribuido de manera uniforme, indicando diversidad en niveles salariales, no parece ser un factor diferenciador en el comportamiento de los clientes.
+✅ **Salario estimado:** Distribuido de manera uniforme, indicando diversidad en niveles salariales, no parece ser un factor diferenciador en el comportamiento de los clientes.  
+✅ **Antigüedad en el banco:** Distribución **uniforme**, sin valores atípicos, lo que indica una captación de clientes constante en el tiempo.  
+✅ **Número de productos contratados:** La mayoría de clientes tienen **1 o 2 productos**, mientras que un grupo reducido con **4 productos** puede representar un segmento especial del banco.  
 ✅ **País predominante:** **Francia (50,1%)**, seguido de Alemania (25,1%) y España con (24,8%).  
 ✅ **Distribución por género:** **Más clientes hombres que mujeres**, aunque la distribución es bastante homogénea (**54,6%** y **45,4% respectivamente**).  
-✅ **Grupo con valores atípicos:** Clientes mayores de **60 años** y clientes con saldo **0**, que podrían comportarse de manera diferente.
+✅ La mayoría de los clientes **(70,5%) tienen tarjeta de crédito**, lo que indica que es un producto clave en la relación con el banco.
+✅ El porcentaje de **miembros activos y no activos es similar (51,51% y 48,49% respectivamente)**, lo que podría indicar oportunidades de fidelización.
+✅ **El 79,63% de los clientes nunca han abandonado el banco**, lo que indica una tasa de retención alta, pero es importante identificar qué factores influyen en el abandono.
+✅ **Grupo con valores atípicos:** Clientes mayores de **60 años**, clientes con saldo **0** y clientes con **4 productos**, que podrían comportarse de manera diferente.
 
 ---

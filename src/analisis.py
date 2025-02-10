@@ -21,13 +21,14 @@ def generar_histogramas_kde(df, ruta_guardado):
     # Crear la carpeta si no existe
     os.makedirs(ruta_guardado, exist_ok=True)
 
-    # Crear figura con 2 filas y 2 columnas
-    fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(12, 10))
+    # Crear figura con 2 filas y 3 columnas
+    fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(18, 10))
 
-    # Recorrer variables y asignarlas a la matriz de subgraficos (2x2)
+    # Recorrer variables y asignarlas a la matriz de subgraficos (2x3)
     for i, col in enumerate(va.var_numericas):
-        fila = i // 2  # Calculo de fila
-        columna = i % 2  # Calculo de columna
+        fila = i // 3  # Calculo de fila
+        columna = i % 3  # Calculo de columna
+        
         sns.histplot(df[col], kde=True, ax=axes[fila, columna], color="darkblue")
         axes[fila, columna].set_title(f"Distribucion de {col}")
 
@@ -44,7 +45,6 @@ def generar_histogramas_kde(df, ruta_guardado):
 def generar_boxplots(df, ruta_guardado):
     """
     Genera y guarda una imagen .jpg de los boxplots para las variables numericas definidas en variables.py
-    en una sola fila con separacion.
     Crea carpeta de guardado si no existe
 
     Parametros:
@@ -57,13 +57,16 @@ def generar_boxplots(df, ruta_guardado):
     # Crear la carpeta si no existe
     os.makedirs(ruta_guardado, exist_ok=True)
 
-    # Crear figura con 1 fila y varias columnas
-    fig, axes = plt.subplots(nrows=1, ncols=len(va.var_numericas), figsize=(20, 5))
+    # Crear figura con 2 filas y 3 columnas
+    fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(18, 10))
 
     # Generar cada boxplot
     for i, col in enumerate(va.var_numericas):
-        sns.boxplot(y=df[col], color="turquoise", ax=axes[i])
-        axes[i].set_title(f"Boxplot de {col}")
+        fila = i // 3  # Calculo de fila
+        columna = i % 3  # Calculo de columna
+        
+        sns.boxplot(y=df[col], color="turquoise", ax=axes[fila, columna])
+        axes[fila, columna].set_title(f"Boxplot de {col}")
 
     plt.subplots_adjust(wspace=0.4)  # Aumentar espacio entre graficas
 

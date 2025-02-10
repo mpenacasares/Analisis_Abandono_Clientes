@@ -129,6 +129,9 @@ def obtener_estadisticas(df):
     Retorna:
         None
     """
+    # Mostrar estadisticas generales con 2 decimales sin notacion cientifica
+    pd.options.display.float_format = '{:.2f}'.format 
+    
     print("📌 Estadisticas descriptivas de variables numericas:")
     display(df.describe().T)
 
