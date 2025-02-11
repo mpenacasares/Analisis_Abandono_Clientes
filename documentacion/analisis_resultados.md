@@ -16,26 +16,31 @@ A continuación, se presentan los Pie chart de las variables analizadas:
 
 ![Pie chart de variables categorícas](../imagenes/piecharts_categoricas.jpg)
 
-### 🔹 **País**  
-- La mayoría de los clientes provienen de **Francia (50,1%)**, seguido por **Alemania (25,1%)** y **España (24,8%)**.  
-- Francia representa la mitad de la base de clientes, lo que podría influir en análisis posteriores.  
+### 🔹 **País**
 
-### 🔹 **Género**  
-- **Hombres (54,6%)** y **Mujeres (45,4%)**.  
-- La diferencia no es drástica, pero podría ser relevante para el análisis de abandono.  
+- La mayoría de los clientes provienen de **Francia (50,1%)**, seguido por **Alemania (25,1%)** y **España (24,8%)**.
+- Francia representa la mitad de la base de clientes, lo que podría influir en análisis posteriores.
 
-### 🔹 **Tarjeta de crédito**  
-- **70,6% de los clientes poseen tarjeta de crédito**, mientras que el **29,4% no**.  
-- Podría ser interesante evaluar si esta variable influye en el abandono.  
+### 🔹 **Género**
 
-### 🔹 **Membresía activa**  
-- **51,5% de los clientes están activos**, mientras que el **48,5% están inactivos**.  
-- Esto indica que el banco tiene casi la misma cantidad de clientes activos e inactivos, lo que puede ser un factor a considerar en estrategias de fidelización.  
+- **Hombres (54,6%)** y **Mujeres (45,4%)**.
+- La diferencia no es drástica, pero podría ser relevante para el análisis de abandono.
 
-### 🔹 **Abandono**  
-- **79,6% de los clientes nunca han abandonado**, mientras que el **20,4% ha abandonado alguna vez, pero actualmente sigue en el banco**.  
-- Esto indica que, aunque la mayoría de los clientes han permanecido en la entidad sin interrupciones, hay un grupo significativo que en algún momento decidió abandonar y luego regresó.  
-- Analizar las razones detrás de estos abandonos y reingresos podría proporcionar información valiosa para mejorar la retención de clientes. 
+### 🔹 **Tarjeta de crédito**
+
+- **70,6% de los clientes poseen tarjeta de crédito**, mientras que el **29,4% no**.
+- Podría ser interesante evaluar si esta variable influye en el abandono.
+
+### 🔹 **Membresía activa**
+
+- **51,5% de los clientes están activos**, mientras que el **48,5% están inactivos**.
+- Esto indica que el banco tiene casi la misma cantidad de clientes activos e inactivos, lo que puede ser un factor a considerar en estrategias de fidelización.
+
+### 🔹 **Abandono**
+
+- **79,6% de los clientes nunca han abandonado**, mientras que el **20,4% ha abandonado alguna vez, pero actualmente sigue en el banco**.
+- Esto indica que, aunque la mayoría de los clientes han permanecido en la entidad sin interrupciones, hay un grupo significativo que en algún momento decidió abandonar y luego regresó.
+- Analizar las razones detrás de estos abandonos y reingresos podría proporcionar información valiosa para mejorar la retención de clientes.
 
 ---
 
@@ -103,7 +108,7 @@ A continuación, se presentan los boxplots de las variables analizadas:
 ### 🔹 **Edad**
 
 - La mayoría de los clientes tienen entre **30 y 50 años**.
-- **Muchos valores atípicos en edades superiores a 60 años**, lo que indica la existencia de un grupo de clientes mayores con patrones distintos, se realizará un estudio detallado.
+- **Muchos valores atípicos en edades superiores a 60 años**, lo que indica la existencia de un grupo de clientes mayores con patrones distintos.
 
 ### 🔹 **Saldo**
 
@@ -141,35 +146,44 @@ A continuación, se presentan los boxplots de las variables analizadas:
 ✅ La mayoría de los clientes **(70,6%) tienen tarjeta de crédito**, lo que indica que es un producto clave en la relación con el banco.
 ✅ El porcentaje de **miembros activos y no activos es similar (51,5% y 48,5% respectivamente)**, lo que podría indicar oportunidades de fidelización.
 ✅ **El 79,6% de los clientes nunca han abandonado el banco**, lo que indica una tasa de retención alta, pero es importante identificar qué factores influyen en el abandono.
-✅ **Grupo con valores atípicos:** Clientes mayores de **60 años**, clientes con saldo **0** y clientes con **4 productos**, que podrían comportarse de manera diferente. 
+✅ **Grupo con valores atípicos:** Clientes mayores de **60 años**, clientes con saldo **0** y clientes con **4 productos**, que podrían comportarse de manera diferente.
 
-🔍 Se analizarán los **valores atípicos de la variable edad** para identificar si este grupo tiene un comportamiento distinto y su posible relación con el abandono, ya que es la **variable con más potencial de impacto** en la retención de clientes. Posteriormente, se segmentarán los clientes en función de si han abandonado o no alguna vez el banco para analizar los factores que han podido influir en su salida.
-
----
-
-## 2️⃣ Análisis de valores atípicos en edad  
-
-En este análisis se compararon las **estadísticas descriptivas** de los **clientes mayores de 60 años** con los **clientes menores de 60 años** para identificar si existían diferencias significativas en su comportamiento financiero y su relación con el abandono.  
+🔍 A continuación se analizará el **perfil de los clientes que han abandonado alguna vez el banco**, comparándolo con aquellos que nunca lo han hecho, para identificar los factores que podrían influir en el abandono. Se evaluarán variables como **edad, puntaje de crédito, salario estimado, país, género, tarjeta de crédito y membresía activa**. Si en este análisis se detecta que la edad tiene un impacto significativo en el abandono, se realizará un estudio más detallado de sus valores atípicos.
 
 ---
 
-### 📌 **Conclusión del análisis de valores atípicos en edad:**  
+## 2️⃣ Perfil de los clientes que han abandonado alguna vez el banco
+
+
+
+
+
+
+---
+
+## PDTE sobre si se hace o no en funcion del analisis anterior -> Análisis de valores atípicos en edad
+
+En este análisis se compararon las **estadísticas descriptivas** de los **clientes mayores de 60 años** con los **clientes menores de 60 años** para identificar si existían diferencias significativas en su comportamiento financiero y su relación con el abandono.
+
+---
+
+### 📌 **Conclusión del análisis de valores atípicos en edad:**
+
 🔹 **Los clientes mayores de 60 años no tienen un comportamiento financiero muy diferente al resto** en términos de saldo, número de productos, puntuación de crédito o salario.  
 🔹 **La única diferencia significativa** es que son más propensos a ser **miembros activos** (80,8% vs 50,1%).  
 🔹 Aunque su **tasa de abandono** es un poco mayor (24,8% vs 20,2%), **la diferencia no es lo suficientemente grande** como para considerarla un factor crítico.  
-🔹 **Por lo tanto, podemos decir que los valores atípicos en edad NO influyen significativamente en el abandono ni en el comportamiento financiero de los clientes, salvo en la probabilidad de ser miembros activos.**  
+🔹 **Por lo tanto, podemos decir que los valores atípicos en edad NO influyen significativamente en el abandono ni en el comportamiento financiero de los clientes, salvo en la probabilidad de ser miembros activos.**
 
 ---
 
-### 📌 **Hipótesis sobre la mayor probabilidad de ser miembros activos**  
+### 📌 **Hipótesis sobre la mayor probabilidad de ser miembros activos**
 
-Dado que los clientes mayores de 60 años muestran **una mayor tasa de membresía activa**, se pueden plantear las siguientes hipótesis sobre este comportamiento:  
+Dado que los clientes mayores de 60 años muestran **una mayor tasa de membresía activa**, se pueden plantear las siguientes hipótesis sobre este comportamiento:
 
 1️⃣ **Han sido clientes durante más tiempo y han desarrollado mayor lealtad hacia la entidad.**  
-2️⃣ **Los clientes mayores pueden percibir más riesgos o dificultades al cambiar de banco, prefiriendo mantenerse en la misma entidad por comodidad o confianza.**   
-3️⃣ **Los clientes más jóvenes pueden cambiar de banco con más frecuencia buscando mejores tasas, menos comisiones o mayor flexibilidad.** 
+2️⃣ **Los clientes mayores pueden percibir más riesgos o dificultades al cambiar de banco, prefiriendo mantenerse en la misma entidad por comodidad o confianza.**  
+3️⃣ **Los clientes más jóvenes pueden cambiar de banco con más frecuencia buscando mejores tasas, menos comisiones o mayor flexibilidad.**
 
-Estas hipótesis podrían ser investigadas en más profundidad con datos adicionales sobre el uso de productos financieros, interacción con el banco y patrones de retención de clientes.  
+Estas hipótesis podrían ser investigadas en más profundidad con datos adicionales sobre el uso de productos financieros, interacción con el banco y patrones de retención de clientes.
 
 ---
-

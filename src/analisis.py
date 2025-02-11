@@ -28,7 +28,7 @@ def generar_histogramas_kde(df, ruta_guardado):
     for i, col in enumerate(va.var_numericas):
         fila = i // 3  # Calculo de fila
         columna = i % 3  # Calculo de columna
-        
+
         sns.histplot(df[col], kde=True, ax=axes[fila, columna], color="darkblue")
         axes[fila, columna].set_title(f"Distribucion de {col}")
 
@@ -64,7 +64,7 @@ def generar_boxplots(df, ruta_guardado):
     for i, col in enumerate(va.var_numericas):
         fila = i // 3  # Calculo de fila
         columna = i % 3  # Calculo de columna
-        
+
         sns.boxplot(y=df[col], color="turquoise", ax=axes[fila, columna])
         axes[fila, columna].set_title(f"Boxplot de {col}")
 
@@ -76,7 +76,7 @@ def generar_boxplots(df, ruta_guardado):
 
     plt.show()
     print(f"✅ Boxplots guardados en {ruta_imagen}")
-    
+
 
 def generar_piecharts(df, columnas_categoricas, ruta_guardado):
     """
@@ -94,7 +94,7 @@ def generar_piecharts(df, columnas_categoricas, ruta_guardado):
     # Crear la carpeta si no existe
     os.makedirs(ruta_guardado, exist_ok=True)
 
-    # Definir colores 
+    # Definir colores
     colors = ["#FFB3BA", "#BAE1FF", "#BAFFC9"]
 
     # Crear figura con 2 filas y 3 columnas
@@ -105,27 +105,46 @@ def generar_piecharts(df, columnas_categoricas, ruta_guardado):
         columna = i % 3  # Calcular la columna correspondiente
 
         df[col].value_counts(normalize=True).plot.pie(
-            autopct='%1.1f%%', startangle=90,
-            colors=colors[:len(df[col].unique())],  # Usamos solo 3 colores
-            textprops={'fontsize': 10},
-            wedgeprops={'edgecolor': 'black', 'linewidth': 0.5},
-            ax=axes[fila, columna]
+            autopct="%1.1f%%",
+            startangle=90,
+            colors=colors[: len(df[col].unique())],  # Usamos solo 3 colores
+            textprops={"fontsize": 10},
+            wedgeprops={"edgecolor": "black", "linewidth": 0.5},
+            ax=axes[fila, columna],
         )
 
-        axes[fila, columna].set_title(f"Distribución de clientes por {col.capitalize()}")
+        axes[fila, columna].set_title(
+            f"Distribución de clientes por {col.capitalize()}"
+        )
         axes[fila, columna].set_ylabel("")
 
     # Eliminar la última celda vacía (solo hay 5 gráficos)
     fig.delaxes(axes[1, 2])
 
     plt.tight_layout()
-    
+
     # Guardar el grafico en formato .jpg
     ruta_imagen = os.path.join(ruta_guardado, "piecharts_categoricas.jpg")
     plt.savefig(ruta_imagen, bbox_inches="tight", pad_inches=0.2, format="jpg", dpi=300)
-    
+
     plt.show()
     print(f"✅ Pie charts guardados en {ruta_imagen}")
 
 
+def comparar_estadisticas(df_si, df_no):
+    """
+    Obtiene y compara las estadisticas descriptivas de clientes que han abandonado alguna vez el banco vs los que no.
 
+    Parametros:
+    df_si (DataFrame): Clientes que han abandonado alguna vez.
+    df_no (DataFrame): Clientes que nunca han abandonado.
+
+    Retorna:
+    Muestra las estadisticas descriptivas de ambos grupos.
+    """
+    stats_si = df_si[va.var_clave_abandono].describe()
+    stats_no = df_no[va.var_clave_abandono].describe()
+
+    # Mostrar resultados en tablas
+    tools.display_dataframe_to_user(name="Estadisticas Abandono Si", dataframe=stats_si)
+    tools.display_dataframe_to_user(name="Estadisticas Abandono No", dataframe=stats_no)

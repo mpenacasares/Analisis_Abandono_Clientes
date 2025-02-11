@@ -44,3 +44,14 @@ var_numericas = [
     "antiguedad",
     "num_productos",
 ]
+
+# Variables clave para analisis del abandono
+var_clave_abandono = [
+    "edad",
+    "puntacion_credito",
+    "pais",
+    "num_productos",
+    "saldo",
+    "miembro_activo",
+    "tarjeta_credito",
+]
