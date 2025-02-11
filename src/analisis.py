@@ -76,3 +76,6 @@ def generar_boxplots(df, ruta_guardado):
 
     plt.show()
     print(f"✅ Boxplots guardados en {ruta_imagen}")
+    
+    
+

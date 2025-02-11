@@ -119,24 +119,25 @@ def revisar_valores_nulos(df):
     return df_nulos
 
 
-def obtener_estadisticas(df):
+def obtener_estadisticas(df, nombre_df="Dataset"):
     """
     Muestra estadisticas descriptivas de variables numericas y categoricas.
 
     Parametros:
         df (pd.DataFrame): DataFrame a analizar.
+        nombre_df (str, opcional): Nombre del DataFrame. Por defecto, "Dataset".
 
     Retorna:
         None
     """
     # Mostrar estadisticas generales con 2 decimales sin notacion cientifica
-    pd.options.display.float_format = '{:.2f}'.format 
-    
-    print("📌 Estadisticas descriptivas de variables numericas:")
+    pd.options.display.float_format = "{:.2f}".format
+
+    print(f"📌 Estadisticas descriptivas de variables numericas de {nombre_df}:")
     display(df.describe().T)
 
-    print("\n📌 Estadisticas descriptivas de variables categoricas:")
-    display(df.describe(include="O").T)  # O = Object (cadenas de texto)
+    print(f"\n📌 Estadisticas descriptivas de variables categoricas de {nombre_df}:")
+    display(df.describe(include="O").T)
 
 
 def revisar_valores_unicos(df):

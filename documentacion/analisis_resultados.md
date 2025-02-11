@@ -108,6 +108,34 @@ A continuación, se presentan los boxplots de las variables analizadas:
 ✅ La mayoría de los clientes **(70,5%) tienen tarjeta de crédito**, lo que indica que es un producto clave en la relación con el banco.
 ✅ El porcentaje de **miembros activos y no activos es similar (51,51% y 48,49% respectivamente)**, lo que podría indicar oportunidades de fidelización.
 ✅ **El 79,63% de los clientes nunca han abandonado el banco**, lo que indica una tasa de retención alta, pero es importante identificar qué factores influyen en el abandono.
-✅ **Grupo con valores atípicos:** Clientes mayores de **60 años**, clientes con saldo **0** y clientes con **4 productos**, que podrían comportarse de manera diferente.
+✅ **Grupo con valores atípicos:** Clientes mayores de **60 años**, clientes con saldo **0** y clientes con **4 productos**, que podrían comportarse de manera diferente. 
+
+🔍 Se analizarán los **valores atípicos de la variable edad** para identificar si este grupo tiene un comportamiento distinto y su posible relación con el abandono, ya que es la **variable con más potencial de impacto** en la retención de clientes. Posteriormente, se segmentarán los clientes según abandono y membresía activa para profundizar en los factores que influyen en su salida del banco.
 
 ---
+## 2️⃣ Análisis de valores atípicos en edad  
+
+En este análisis se compararon las **estadísticas descriptivas** de los **clientes mayores de 60 años** con los **clientes menores de 60 años** para identificar si existían diferencias significativas en su comportamiento financiero y su relación con el abandono.  
+
+---
+
+### 📌 **Conclusión del análisis de valores atípicos en edad:**  
+🔹 **Los clientes mayores de 60 años no tienen un comportamiento financiero muy diferente al resto** en términos de saldo, número de productos, puntuación de crédito o salario.  
+🔹 **La única diferencia significativa** es que son más propensos a ser **miembros activos** (80,8% vs 50,1%).  
+🔹 Aunque su **tasa de abandono** es un poco mayor (24,8% vs 20,2%), **la diferencia no es lo suficientemente grande** como para considerarla un factor crítico.  
+🔹 **Por lo tanto, podemos decir que los valores atípicos en edad NO influyen significativamente en el abandono ni en el comportamiento financiero de los clientes, salvo en la probabilidad de ser miembros activos.**  
+
+---
+
+### 📌 **Hipótesis sobre la mayor probabilidad de ser miembros activos**  
+
+Dado que los clientes mayores de 60 años muestran **una mayor tasa de membresía activa**, se pueden plantear las siguientes hipótesis sobre este comportamiento:  
+
+1️⃣ **Han sido clientes durante más tiempo y han desarrollado mayor lealtad hacia la entidad.**  
+2️⃣ **Los clientes mayores pueden percibir más riesgos o dificultades al cambiar de banco, prefiriendo mantenerse en la misma entidad por comodidad o confianza.**   
+3️⃣ **Los clientes más jóvenes pueden cambiar de banco con más frecuencia buscando mejores tasas, menos comisiones o mayor flexibilidad.** 
+
+Estas hipótesis podrían ser investigadas en más profundidad con datos adicionales sobre el uso de productos financieros, interacción con el banco y patrones de retención de clientes.  
+
+---
+
