@@ -20,5 +20,27 @@ mapeo_binario = {1: "Si", 0: "No"}
 # Columnas con valores binarios a transformar
 columnas_binarias = ["tarjeta_credito", "miembro_activo", "abandono"]
 
+# Diccionario para traducir valores de variables categoricas
+traduccion_categoricas = {
+    "pais": {"France": "Francia", "Spain": "España", "Germany": "Alemania"},
+    "genero": {"Male": "Hombre", "Female": "Mujer"},
+}
+
+# Variables categoricas a analizar
+var_categoricas = [
+    "pais",
+    "genero",
+    "tarjeta_credito",
+    "miembro_activo",
+    "abandono",
+]
+
 # Variables numericas a analizar
-var_numericas = ["puntacion_credito", "edad", "saldo", "salario_estimado", "antiguedad", "num_productos"]
+var_numericas = [
+    "puntacion_credito",
+    "edad",
+    "saldo",
+    "salario_estimado",
+    "antiguedad",
+    "num_productos",
+]

@@ -6,13 +6,46 @@ Este documento contiene los resultados del análisis exploratorio de los cliente
 
 ## 1️⃣ Perfil genérico del cliente
 
-## 1️.1. Análisis de la distribución de variables numéricas
+## 1️.1. Análisis de la distribución de variables categóricas
+
+Los gráficos de tipo pie chart permiten visualizar la proporción de clientes en cada una de las categorícas analizadas.
+
+### 🔹 **Pie chart de variables categorícas**
+
+A continuación, se presentan los Pie chart de las variables analizadas:
+
+![Pie chart de variables categorícas](../imagenes/piecharts_categoricas.jpg)
+
+### 🔹 **País**  
+- La mayoría de los clientes provienen de **Francia (50,1%)**, seguido por **Alemania (25,1%)** y **España (24,8%)**.  
+- Francia representa la mitad de la base de clientes, lo que podría influir en análisis posteriores.  
+
+### 🔹 **Género**  
+- **Hombres (54,6%)** y **Mujeres (45,4%)**.  
+- La diferencia no es drástica, pero podría ser relevante para el análisis de abandono.  
+
+### 🔹 **Tarjeta de crédito**  
+- **70,6% de los clientes poseen tarjeta de crédito**, mientras que el **29,4% no**.  
+- Podría ser interesante evaluar si esta variable influye en el abandono.  
+
+### 🔹 **Membresía activa**  
+- **51,5% de los clientes están activos**, mientras que el **48,5% están inactivos**.  
+- Esto indica que el banco tiene casi la misma cantidad de clientes activos e inactivos, lo que puede ser un factor a considerar en estrategias de fidelización.  
+
+### 🔹 **Abandono**  
+- **79,6% de los clientes nunca han abandonado**, mientras que el **20,4% ha abandonado alguna vez, pero actualmente sigue en el banco**.  
+- Esto indica que, aunque la mayoría de los clientes han permanecido en la entidad sin interrupciones, hay un grupo significativo que en algún momento decidió abandonar y luego regresó.  
+- Analizar las razones detrás de estos abandonos y reingresos podría proporcionar información valiosa para mejorar la retención de clientes. 
+
+---
+
+## 1️.2. Análisis de la distribución de variables numéricas
 
 Este análisis se basa en histogramas y estadísticas descriptivas para entender cómo se distribuyen los clientes según diferentes métricas.
 
 ### 🔹 **Histogramas**
 
-A continuación, se presentan las distribuciones de las principales variables numéricas:
+A continuación, se presentan las distribuciones de las variables numéricas:
 
 ![Distribución de variables numéricas](../imagenes/distribucion_numericas.jpg)
 
@@ -52,7 +85,7 @@ A continuación, se presentan las distribuciones de las principales variables nu
 
 ---
 
-## 1.2️. Análisis de valores atípicos (Boxplots)
+## 1.3. Análisis de valores atípicos (Boxplots)
 
 Los boxplots nos permiten visualizar valores extremos que pueden ser clave para entender el comportamiento de los clientes.
 
@@ -95,7 +128,7 @@ A continuación, se presentan los boxplots de las variables analizadas:
 
 ---
 
-📌 **Basándonos en los análisis anteriores y las estadísticas descriptivas de las variables categóricas, el perfil general del cliente del banco es el siguiente:**
+📌 **Basándonos en los análisis anteriores, el perfil general del cliente del banco es el siguiente:**
 
 ✅ **Edad promedio:** Entre **30 y 50 años**, siendo 39 años la edad media.  
 ✅ **Saldo promedio:** Alrededor de **100.000**, aunque existe un grupo con saldo **0**.  
@@ -105,14 +138,15 @@ A continuación, se presentan los boxplots de las variables analizadas:
 ✅ **Número de productos contratados:** La mayoría de clientes tienen **1 o 2 productos**, mientras que un grupo reducido con **4 productos** puede representar un segmento especial del banco.  
 ✅ **País predominante:** **Francia (50,1%)**, seguido de Alemania (25,1%) y España con (24,8%).  
 ✅ **Distribución por género:** **Más clientes hombres que mujeres**, aunque la distribución es bastante homogénea (**54,6%** y **45,4% respectivamente**).  
-✅ La mayoría de los clientes **(70,5%) tienen tarjeta de crédito**, lo que indica que es un producto clave en la relación con el banco.
-✅ El porcentaje de **miembros activos y no activos es similar (51,51% y 48,49% respectivamente)**, lo que podría indicar oportunidades de fidelización.
-✅ **El 79,63% de los clientes nunca han abandonado el banco**, lo que indica una tasa de retención alta, pero es importante identificar qué factores influyen en el abandono.
+✅ La mayoría de los clientes **(70,6%) tienen tarjeta de crédito**, lo que indica que es un producto clave en la relación con el banco.
+✅ El porcentaje de **miembros activos y no activos es similar (51,5% y 48,5% respectivamente)**, lo que podría indicar oportunidades de fidelización.
+✅ **El 79,6% de los clientes nunca han abandonado el banco**, lo que indica una tasa de retención alta, pero es importante identificar qué factores influyen en el abandono.
 ✅ **Grupo con valores atípicos:** Clientes mayores de **60 años**, clientes con saldo **0** y clientes con **4 productos**, que podrían comportarse de manera diferente. 
 
-🔍 Se analizarán los **valores atípicos de la variable edad** para identificar si este grupo tiene un comportamiento distinto y su posible relación con el abandono, ya que es la **variable con más potencial de impacto** en la retención de clientes. Posteriormente, se segmentarán los clientes según abandono y membresía activa para profundizar en los factores que influyen en su salida del banco.
+🔍 Se analizarán los **valores atípicos de la variable edad** para identificar si este grupo tiene un comportamiento distinto y su posible relación con el abandono, ya que es la **variable con más potencial de impacto** en la retención de clientes. Posteriormente, se segmentarán los clientes en función de si han abandonado o no alguna vez el banco para analizar los factores que han podido influir en su salida.
 
 ---
+
 ## 2️⃣ Análisis de valores atípicos en edad  
 
 En este análisis se compararon las **estadísticas descriptivas** de los **clientes mayores de 60 años** con los **clientes menores de 60 años** para identificar si existían diferencias significativas en su comportamiento financiero y su relación con el abandono.  

@@ -180,3 +180,19 @@ def transformar_binarios(df, columnas):
         if df[col].isin([0, 1]).all():
             df[col] = df[col].map(va.mapeo_binario)
     return df
+
+def traducir_categoricas(df):
+    """
+    Traduce los valores de las variables categoricas segun el diccionario en variables.py.
+
+    Parametros:
+        df (pd.DataFrame): DataFrame con los datos.
+
+    Retorna:
+        pd.DataFrame: DataFrame con los valores traducidos.
+    """
+    df = df.copy()
+    for col, mapping in va.traduccion_categoricas.items():
+        if col in df.columns:
+            df[col] = df[col].replace(mapping)
+    return df
