@@ -1,6 +1,16 @@
 # Análisis y Resultados
 
-Este documento contiene los resultados del análisis exploratorio de los clientes del banco, incluyendo estadísticas descriptivas, histogramas y boxplots. El objetivo es obtener un perfil general del cliente del banco y detectar patrones que puedan influir en el abandono -> PDTE: Ajustar cuando tengamos todos los analisis hechos
+Este documento contiene los resultados del análisis exploratorio de los clientes del banco, incluyendo estadísticas descriptivas, histogramas y boxplots.
+
+📌 **Objetivo del análisis**
+
+- Obtener un **perfil general del cliente del banco**, analizando características demográficas y financieras.
+- Identificar **factores clave que pueden influir en el abandono**, segmentando clientes en función de si han abandonado en algún momento.
+- Proponer **estrategias de retención basadas en datos**, para minimizar la pérdida de clientes y mejorar la fidelización.
+
+El análisis se estructura en **dos grandes partes**:  
+🔹 **1️⃣ Perfil genérico del cliente**, donde se analizan las características generales de todos los clientes del banco.  
+🔹 **2️⃣ Perfil de clientes según abandono**, donde se comparan los clientes que han abandonado con los que nunca lo han hecho, identificando diferencias clave.
 
 ---
 
@@ -148,72 +158,108 @@ A continuación, se presentan los boxplots de las variables analizadas:
 ✅ **El 79,6% de los clientes nunca han abandonado el banco**, lo que indica una tasa de retención alta, pero es importante identificar qué factores influyen en el abandono.
 ✅ **Grupo con valores atípicos:** Clientes mayores de **60 años**, clientes con saldo **0** y clientes con **4 productos**, que podrían comportarse de manera diferente.
 
-🔍 A continuación se analizará el **perfil de los clientes que han abandonado alguna vez el banco**, comparándolo con aquellos que nunca lo han hecho, para identificar los factores que podrían influir en el abandono. Se evaluarán variables como **edad, puntaje de crédito, salario estimado, país, género, tarjeta de crédito y membresía activa**. Si en este análisis se detecta que la edad tiene un impacto significativo en el abandono, se realizará un estudio más detallado de sus valores atípicos.
+🔍 A continuación se analizarán las diferencias en el **perfil de los clientes que han abandonado alguna vez el banco**, comparándolo con aquellos que nunca lo han hecho, para identificar los factores que podrían influir en el abandono.
 
 ---
 
 ## 2️⃣ Análisis de diferencias clave entre clientes que han abandonado y los que no
 
-Tras segmentar los clientes en función de si han abandonado alguna vez o no, se han calculado estadísticas descriptivas para todas las variables y se han identificado aquellas con diferencias más significativas.
+Tras segmentar los clientes en función de si han abandonado alguna vez el banco o no, se han calculado estadísticas descriptivas y generado visualizaciones para analizar las diferencias en las variables más relevantes.
 
 ### 🔹 **Resumen de diferencias generales entre los grupos**
-A continuación, se presenta un resumen de las diferencias clave encontradas entre los clientes que han abandonado alguna vez y los que nunca lo han hecho:
+
+Inicialmente, se han analizado **todas las variables disponibles** para identificar diferencias entre los clientes que han abandonado alguna vez y los que nunca lo han hecho.
+
+Posteriormente, se ha realizado un segundo análisis para determinar **cuáles de esas diferencias son realmente relevantes** para el abandono y cuáles tienen un impacto menor o nulo.
+
+A continuación, se presenta un resumen de los hallazgos clave:
 
 📌 **Diferencias relevantes** (seleccionadas para análisis visual):  
 ✅ **Edad** → Los clientes que han abandonado son, en promedio, **más mayores**.  
 ✅ **Saldo** → Los clientes que han abandonado tenían, en promedio, **un saldo ligeramente mayor**.  
+✅ **País** → La mayoría de los clientes que han abandonado son **alemanes**, mientras que los que no han abandonado son **franceses**.  
+✅ **Membresía Activa** → La mayoría de los clientes que han abandonado eran **inactivos (64% No activos)**.
 
 📌 **Diferencias mínimas o sin impacto claro** (no graficadas):  
 ❌ **Puntaje de crédito** → No hay una diferencia significativa entre los grupos.  
 ❌ **Número de productos** → La diferencia es mínima (**1,48 vs 1,54 productos en promedio**).  
-❌ **Tarjeta de crédito** → No parece influir en el abandono (**70% de los que abandonaron tenían tarjeta, frente a 75% de los que no han abandonado**).  
-
-📌 **Variables con diferencias significativas pero categóricas** (se graficarán con gráficos de barras más adelante): PDTE
-🔹 **País** → La mayoría de los clientes que han abandonado son **alemanes**, mientras que los que no han abandonado son **franceses**.  
-🔹 **Membresía activa** → La mayoría de los clientes que han abandonado eran **inactivos (64% No activos)**.  
+❌ **Tarjeta de crédito** → No parece influir en el abandono (**70% de los que abandonaron tenían tarjeta, frente a 75% de los que no han abandonado**).
 
 ---
 
-## 2.1 Análisis visual de las variables clave (Boxplots)
+## 2️.1. Análisis visual de las diferencias entre los grupos
 
-Tras identificar las variables numéricas con mayor impacto en el abandono, se han generado boxplots para visualizar sus diferencias.
+Se han generado gráficos que comparan las distribuciones de edad, saldo, país y membresía activa en función del abandono. Estos análisis permiten identificar patrones y definir estrategias de retención.
 
-### 🔹 **Boxplot de Edad según Abandono**
-
-El análisis muestra que los clientes que han abandonado alguna vez tienen una **edad media mayor** que los que nunca lo han hecho.
+### 🔹 **Histograma de Edad según Abandono**
 
 📌 **Hallazgos clave:**
-- La **mediana de edad** de los clientes que han abandonado es mayor que la de los que no lo han hecho.
-- En el grupo de clientes que **nunca han abandonado**, hay mayor dispersión en la edad, con una mayor proporción de clientes jóvenes.
-- Se detectaron **valores atípicos** en ambos grupos (clientes con más de 60 años), pero no se observó una relación clara de que estos sean el principal factor de abandono.
 
-📌 **Posibles hipótesis:**
-- Los clientes mayores pueden ser más propensos a cambiar de banco buscando mejores condiciones.
-- El banco parece retener mejor a los clientes más jóvenes, lo que sugiere que su oferta es atractiva para este segmento.
+- La mayor concentración de clientes se encuentra entre los **30 y 40 años**.
+- Los clientes que han abandonado están más presentes en edades **entre 40 y 50 años**.
+- Se detectaron algunos valores atípicos en clientes mayores de **60 años**, pero no representan un patrón claro de abandono.
 
 📌 **Estrategias de retención:**
+
 - Crear **programas de fidelización** para clientes mayores con beneficios exclusivos.
 - Potenciar herramientas digitales y productos adaptados a clientes jóvenes para mantener la retención en este segmento.
 
-![Boxplot de Edad según Abandono](../imagenes/boxplot_abandono_edad.jpg)
+![Histograma de Edad según Abandono](../imagenes/histograma_abandono_edad.jpg)
 
 ---
 
 ### 🔹 **Boxplot de Saldo según Abandono**
 
-El análisis del saldo muestra que los clientes que han abandonado alguna vez **tienen una mediana de saldo ligeramente mayor**, pero no se observa una diferencia significativa con los que nunca han abandonado.
-
 📌 **Hallazgos clave:**
+
 - No hay una **relación directa entre saldo y abandono**.
 - Existen clientes con **saldo 0 en ambos grupos**, lo que indica que tener saldo bajo no es un factor determinante.
 - Los clientes con saldo más alto están presentes en ambos grupos, lo que sugiere que no es un predictor clave del abandono.
 
-📌 **Posibles hipótesis:**
-- El saldo por sí solo **no determina el abandono**, pero podría influir en combinación con otras variables.
-- Podría haber otros factores financieros (uso de productos, comisiones, etc.) que influyan en la decisión de abandono.
-
 📌 **Estrategias de retención:**
+
 - Segmentar clientes por **hábitos financieros** en lugar de solo por saldo.
 - Implementar **ofertas personalizadas para clientes con mayor capital**, incentivando su permanencia.
 
 ![Boxplot de Saldo según Abandono](../imagenes/boxplot_abandono_saldo.jpg)
+
+---
+
+### 🔹 **Gráfico de Barras de País según Abandono**
+
+📌 **Hallazgos clave:**
+
+- **Francia** tiene la mayor cantidad de clientes que no han abandonado.
+- **Alemania y España** tienen una proporción más alta de clientes que han abandonado en comparación con Francia.
+
+📌 **Estrategias de retención:**
+
+- Evaluar si las políticas del banco son menos atractivas en Alemania y España.
+- Personalizar estrategias de marketing y beneficios según el país.
+
+![Gráfico de Barras de País según Abandono](../imagenes/barras_abandono_pais.jpg)
+
+---
+
+### 🔹 **Gráfico de Barras de Membresía Activa según Abandono**
+
+📌 **Hallazgos clave:**
+
+- **64% de los clientes que han abandonado no eran miembros activos**.
+- En cambio, la mayoría de los clientes que nunca han abandonado eran activos.
+
+📌 **Estrategias de retención:**
+
+- Implementar programas de **engagement** para clientes inactivos.
+- Ofrecer incentivos a los clientes que mantengan actividad constante en sus cuentas.
+
+![Gráfico de Barras de Membresía Activa según Abandono](../imagenes/barras_abandono_miembro_activo.jpg)
+
+---
+
+📌 **Conclusión del análisis de abandono**
+
+✅ **Edad y membresía activa son los factores con mayor impacto en el abandono,** sin embargo, aunque la edad muestra una diferencia entre los clientes que han abandonado y los que no, el análisis de outliers (clientes mayores de 60 años) **no aporta información clave**, ya que representan un grupo minoritario sin una tendencia clara de abandono. Por ello, el enfoque se ha mantenido en la diferencia de edad media entre ambos grupos, en lugar de profundizar en los valores extremos.  
+✅ **El saldo no parece ser un factor determinante**, aunque los clientes con mayor saldo podrían representar un segmento interesante para la retención.  
+✅ **El país de origen influye en el comportamiento del cliente**, con Alemania y España mostrando más abandonos en comparación con Francia.  
+✅ **Los clientes inactivos tienen una mayor tasa de abandono**, lo que sugiere que el banco podría implementar estrategias para fomentar su engagement.

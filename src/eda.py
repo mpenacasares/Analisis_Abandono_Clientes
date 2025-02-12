@@ -24,7 +24,7 @@ def extraer_datos_csv(ruta):
         print(
             f"✅ Datos extraidos correctamente. Filas: {df.shape[0]}, Columnas: {df.shape[1]}"
         )
-        display(df.head())  # Mostrar las primeras filas
+        print(df.head())  # Mostrar las primeras filas
         return df
     except (
         Exception
@@ -76,7 +76,7 @@ def get_duplicate_rows(df):
         print("✅ No hay filas duplicadas en el dataset.")
     else:
         print(f"⚠ Hay {duplicate_rows.shape[0]} filas duplicadas en el dataset.")
-        display(duplicate_rows)
+        print(duplicate_rows)
 
     return duplicate_rows
 
@@ -114,7 +114,7 @@ def revisar_valores_nulos(df):
         f"📌 Columnas sin valores nulos: {len(df_nulos[df_nulos['Valores nulos'] == 0])}"
     )
 
-    display(df_nulos[df_nulos["Valores nulos"] > 0])  # Muestra solo columnas con nulos
+    print(df_nulos[df_nulos["Valores nulos"] > 0])  # Muestra solo columnas con nulos
 
     return df_nulos
 
@@ -134,10 +134,10 @@ def obtener_estadisticas(df, nombre_df="Dataset"):
     pd.options.display.float_format = "{:.2f}".format
 
     print(f"📌 Estadisticas descriptivas de variables numericas de {nombre_df}:")
-    display(df.describe().T)
+    print(df.describe().T)
 
     print(f"\n📌 Estadisticas descriptivas de variables categoricas de {nombre_df}:")
-    display(df.describe(include="O").T)
+    print(df.describe(include="O").T)
 
 
 def revisar_valores_unicos(df):
@@ -180,6 +180,7 @@ def transformar_binarios(df, columnas):
         if df[col].isin([0, 1]).all():
             df[col] = df[col].map(va.mapeo_binario)
     return df
+
 
 def traducir_categoricas(df):
     """
