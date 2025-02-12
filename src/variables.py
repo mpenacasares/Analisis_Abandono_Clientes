@@ -55,3 +55,27 @@ var_clave_abandono = [
     "miembro_activo",
     "tarjeta_credito",
 ]
+
+# Query de soporte para la creacion de la bbdd
+query_crear_tabla = """
+CREATE TABLE IF NOT EXISTS BlueBank_Clientes (
+    id_cliente BIGINT PRIMARY KEY,
+    puntacion_credito INT,
+    pais VARCHAR(50),
+    genero VARCHAR(10),
+    edad INT,
+    antiguedad INT,
+    saldo FLOAT,
+    num_productos INT,
+    tarjeta_credito VARCHAR(2),
+    miembro_activo VARCHAR(2),
+    salario_estimado FLOAT,
+    abandono VARCHAR(2)
+);
+"""
+
+# Query de soporte para la insercion de valores en la bbdd
+query_insertar_datos = """
+INSERT INTO BlueBank_Clientes (id_cliente, puntacion_credito, pais, genero, edad, antiguedad, saldo, num_productos, tarjeta_credito, miembro_activo, salario_estimado, abandono)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+"""
