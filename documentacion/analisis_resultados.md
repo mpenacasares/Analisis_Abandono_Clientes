@@ -1,16 +1,16 @@
 # Análisis y Resultados
 
-Este documento contiene los resultados del análisis exploratorio de los clientes del banco, incluyendo estadísticas descriptivas, histogramas y boxplots.
+Este documento contiene los resultados del análisis exploratorio de los clientes de **BlueBank**, una entidad financiera ficticia que busca comprender los factores que influyen en el abandono de clientes. 
 
 📌 **Objetivo del análisis**
 
-- Obtener un **perfil general del cliente del banco**, analizando características demográficas y financieras.
-- Identificar **factores clave que pueden influir en el abandono**, segmentando clientes en función de si han abandonado en algún momento.
-- Proponer **estrategias de retención basadas en datos**, para minimizar la pérdida de clientes y mejorar la fidelización.
+- Obtener un **perfil general de los clientes de BlueBank**, analizando sus características demográficas y financieras.  
+- Identificar **factores clave que pueden influir en el abandono**, segmentando clientes en función de si han abandonado en algún momento.  
+- Proponer **estrategias de retención basadas en datos**, con el objetivo de minimizar la pérdida de clientes y mejorar la fidelización.  
 
 El análisis se estructura en **dos grandes partes**:  
-🔹 **1️⃣ Perfil genérico del cliente**, donde se analizan las características generales de todos los clientes del banco.  
-🔹 **2️⃣ Perfil de clientes según abandono**, donde se comparan los clientes que han abandonado con los que nunca lo han hecho, identificando diferencias clave.
+🔹 **1️⃣ Perfil general de los clientes de BlueBank**, donde se analizan las características generales de la base de clientes.  
+🔹 **2️⃣ Perfil de clientes según abandono**, donde se comparan los clientes que han abandonado con los que nunca lo han hecho, identificando diferencias clave y proponiendo estrategias de retención.  
 
 ---
 
