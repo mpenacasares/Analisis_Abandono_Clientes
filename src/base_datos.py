@@ -6,6 +6,7 @@ from src import variables as va
 # Cargar las variables del archivo .env
 load_dotenv()
 
+
 def conectar_mysql():
     """
     Establece la conexion con MySQL y devuelve el objeto de conexion.
@@ -15,7 +16,7 @@ def conectar_mysql():
             host=os.getenv("DB_HOST"),
             user=os.getenv("DB_USER"),
             password=os.getenv("DB_PASSWORD"),
-            database=os.getenv("DB_NAME")
+            database=os.getenv("DB_NAME"),
         )
         print("✅ Conexión a MySQL establecida.")
         return conexion
@@ -32,8 +33,9 @@ def crear_base_datos():
         conexion = mysql.connector.connect(
             host=os.getenv("DB_HOST"),
             user=os.getenv("DB_USER"),
-            password=os.getenv("DB_PASSWORD")
+            password=os.getenv("DB_PASSWORD"),
         )
+        print(f"CONEXION OKEY")
         cursor = conexion.cursor()
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {os.getenv('DB_NAME')}")
         print(f"✅ Base de datos '{os.getenv('DB_NAME')}' creada o ya existente.")
@@ -75,35 +77,37 @@ def insertar_datos(df):
             conexion.close()
         except mysql.connector.Error as err:
             print(f"❌ Error al insertar datos en MySQL: {err}")
-            
-            
+
+
 def preguntar_carga_mysql(df):
     """
-    Pregunta al usuario si desea cargar los datos en MySQL.  
+    Pregunta al usuario si desea cargar los datos en MySQL.
     Solo acepta respuestas "Si" o "No" y maneja entradas no validas.
-    
+
     Parametros:
         df (pd.DataFrame): DataFrame con los datos procesados para cargar en MySQL.
-    
+
     Retorna:
         None
     """
     while True:
-        respuesta = input("\n¿Quieres generar la base de datos en MySQL y cargar los datos? (Si/No): ").strip().lower()
-        
+        respuesta = (
+            input(
+                "\n¿Quieres generar la base de datos en MySQL y cargar los datos? (Si/No): "
+            )
+            .strip()
+            .lower()
+        )
+
         if respuesta == "si":
-            if crear_base_datos():  
-                if insertar_datos(df):  
-                    print("✅ Base de datos creada y datos cargados en MySQL correctamente.")
-                else:
-                    print("⚠ La base de datos fue creada, pero hubo un problema al cargar los datos.")
-            else:
-                print("❌ No se pudo crear la base de datos. Revisa la conexión con MySQL.")
-            break  
+            crear_base_datos()
+            crear_tabla()
+            insertar_datos(df)
+            break
 
         elif respuesta == "no":
             print("⏩ Omitiendo la carga en MySQL. Proceso finalizado.")
-            break 
+            break
 
         else:
             print("⚠ Entrada no válida. Por favor, responde con 'Si' o 'No'.")
