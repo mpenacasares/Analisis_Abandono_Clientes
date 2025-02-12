@@ -152,38 +152,68 @@ A continuación, se presentan los boxplots de las variables analizadas:
 
 ---
 
-## 2️⃣ Perfil de los clientes que han abandonado alguna vez el banco
+## 2️⃣ Análisis de diferencias clave entre clientes que han abandonado y los que no
 
+Tras segmentar los clientes en función de si han abandonado alguna vez o no, se han calculado estadísticas descriptivas para todas las variables y se han identificado aquellas con diferencias más significativas.
 
+### 🔹 **Resumen de diferencias generales entre los grupos**
+A continuación, se presenta un resumen de las diferencias clave encontradas entre los clientes que han abandonado alguna vez y los que nunca lo han hecho:
 
+📌 **Diferencias relevantes** (seleccionadas para análisis visual):  
+✅ **Edad** → Los clientes que han abandonado son, en promedio, **más mayores**.  
+✅ **Saldo** → Los clientes que han abandonado tenían, en promedio, **un saldo ligeramente mayor**.  
 
+📌 **Diferencias mínimas o sin impacto claro** (no graficadas):  
+❌ **Puntaje de crédito** → No hay una diferencia significativa entre los grupos.  
+❌ **Número de productos** → La diferencia es mínima (**1,48 vs 1,54 productos en promedio**).  
+❌ **Tarjeta de crédito** → No parece influir en el abandono (**70% de los que abandonaron tenían tarjeta, frente a 75% de los que no han abandonado**).  
 
-
----
-
-## PDTE sobre si se hace o no en funcion del analisis anterior -> Análisis de valores atípicos en edad
-
-En este análisis se compararon las **estadísticas descriptivas** de los **clientes mayores de 60 años** con los **clientes menores de 60 años** para identificar si existían diferencias significativas en su comportamiento financiero y su relación con el abandono.
-
----
-
-### 📌 **Conclusión del análisis de valores atípicos en edad:**
-
-🔹 **Los clientes mayores de 60 años no tienen un comportamiento financiero muy diferente al resto** en términos de saldo, número de productos, puntuación de crédito o salario.  
-🔹 **La única diferencia significativa** es que son más propensos a ser **miembros activos** (80,8% vs 50,1%).  
-🔹 Aunque su **tasa de abandono** es un poco mayor (24,8% vs 20,2%), **la diferencia no es lo suficientemente grande** como para considerarla un factor crítico.  
-🔹 **Por lo tanto, podemos decir que los valores atípicos en edad NO influyen significativamente en el abandono ni en el comportamiento financiero de los clientes, salvo en la probabilidad de ser miembros activos.**
+📌 **Variables con diferencias significativas pero categóricas** (se graficarán con gráficos de barras más adelante): PDTE
+🔹 **País** → La mayoría de los clientes que han abandonado son **alemanes**, mientras que los que no han abandonado son **franceses**.  
+🔹 **Membresía activa** → La mayoría de los clientes que han abandonado eran **inactivos (64% No activos)**.  
 
 ---
 
-### 📌 **Hipótesis sobre la mayor probabilidad de ser miembros activos**
+## 2.1 Análisis visual de las variables clave (Boxplots)
 
-Dado que los clientes mayores de 60 años muestran **una mayor tasa de membresía activa**, se pueden plantear las siguientes hipótesis sobre este comportamiento:
+Tras identificar las variables numéricas con mayor impacto en el abandono, se han generado boxplots para visualizar sus diferencias.
 
-1️⃣ **Han sido clientes durante más tiempo y han desarrollado mayor lealtad hacia la entidad.**  
-2️⃣ **Los clientes mayores pueden percibir más riesgos o dificultades al cambiar de banco, prefiriendo mantenerse en la misma entidad por comodidad o confianza.**  
-3️⃣ **Los clientes más jóvenes pueden cambiar de banco con más frecuencia buscando mejores tasas, menos comisiones o mayor flexibilidad.**
+### 🔹 **Boxplot de Edad según Abandono**
 
-Estas hipótesis podrían ser investigadas en más profundidad con datos adicionales sobre el uso de productos financieros, interacción con el banco y patrones de retención de clientes.
+El análisis muestra que los clientes que han abandonado alguna vez tienen una **edad media mayor** que los que nunca lo han hecho.
+
+📌 **Hallazgos clave:**
+- La **mediana de edad** de los clientes que han abandonado es mayor que la de los que no lo han hecho.
+- En el grupo de clientes que **nunca han abandonado**, hay mayor dispersión en la edad, con una mayor proporción de clientes jóvenes.
+- Se detectaron **valores atípicos** en ambos grupos (clientes con más de 60 años), pero no se observó una relación clara de que estos sean el principal factor de abandono.
+
+📌 **Posibles hipótesis:**
+- Los clientes mayores pueden ser más propensos a cambiar de banco buscando mejores condiciones.
+- El banco parece retener mejor a los clientes más jóvenes, lo que sugiere que su oferta es atractiva para este segmento.
+
+📌 **Estrategias de retención:**
+- Crear **programas de fidelización** para clientes mayores con beneficios exclusivos.
+- Potenciar herramientas digitales y productos adaptados a clientes jóvenes para mantener la retención en este segmento.
+
+![Boxplot de Edad según Abandono](../imagenes/boxplot_abandono_edad.jpg)
 
 ---
+
+### 🔹 **Boxplot de Saldo según Abandono**
+
+El análisis del saldo muestra que los clientes que han abandonado alguna vez **tienen una mediana de saldo ligeramente mayor**, pero no se observa una diferencia significativa con los que nunca han abandonado.
+
+📌 **Hallazgos clave:**
+- No hay una **relación directa entre saldo y abandono**.
+- Existen clientes con **saldo 0 en ambos grupos**, lo que indica que tener saldo bajo no es un factor determinante.
+- Los clientes con saldo más alto están presentes en ambos grupos, lo que sugiere que no es un predictor clave del abandono.
+
+📌 **Posibles hipótesis:**
+- El saldo por sí solo **no determina el abandono**, pero podría influir en combinación con otras variables.
+- Podría haber otros factores financieros (uso de productos, comisiones, etc.) que influyan en la decisión de abandono.
+
+📌 **Estrategias de retención:**
+- Segmentar clientes por **hábitos financieros** en lugar de solo por saldo.
+- Implementar **ofertas personalizadas para clientes con mayor capital**, incentivando su permanencia.
+
+![Boxplot de Saldo según Abandono](../imagenes/boxplot_abandono_saldo.jpg)

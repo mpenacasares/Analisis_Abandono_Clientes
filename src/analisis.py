@@ -29,7 +29,7 @@ def generar_histogramas_kde(df, ruta_guardado):
         fila = i // 3  # Calculo de fila
         columna = i % 3  # Calculo de columna
 
-        sns.histplot(df[col], kde=True, ax=axes[fila, columna], color="darkblue")
+        sns.histplot(df[col], kde=True, ax=axes[fila, columna], color="turquoise")
         axes[fila, columna].set_title(f"Distribucion de {col}")
 
     plt.tight_layout()
@@ -148,3 +148,37 @@ def comparar_estadisticas(df_si, df_no):
     # Mostrar resultados en tablas
     tools.display_dataframe_to_user(name="Estadisticas Abandono Si", dataframe=stats_si)
     tools.display_dataframe_to_user(name="Estadisticas Abandono No", dataframe=stats_no)
+
+
+def generar_boxplot_abandono(df_si, df_no, variable, ruta_guardado):
+    """
+    Genera y guarda un boxplot comparando clientes que han abandonado vs. los que no.
+
+    Parametros:
+        df_si (pd.DataFrame): Clientes que han abandonado al menos una vez.
+        df_no (pd.DataFrame): Clientes que nunca han abandonado.
+        variable (str): Nombre de la variable a graficar.
+        ruta_guardado (str): Carpeta donde se guardaran las imagenes.
+
+    Retorna:
+        None: Muestra y guarda el boxplot comparativo.
+    """
+    # Crear carpeta si no existe
+    os.makedirs(ruta_guardado, exist_ok=True)
+
+    # Reformatear los datos en un solo DataFrame para Seaborn
+    df_si["abandono"] = "Si"
+    df_no["abandono"] = "No"
+    df_consolidado = pd.concat([df_si[[variable, "abandono"]], df_no[[variable, "abandono"]]])
+
+    # Crear la figura
+    plt.figure(figsize=(8, 6))
+    sns.boxplot(x="abandono", y=variable, data=df_consolidado, hue="abandono", palette={"Si": "lightcoral", "No": "turquoise"}, legend=False)
+    plt.title(f"Boxplot de {variable} según abandono")
+
+    # Guardar el gráfico
+    ruta_imagen = os.path.join(ruta_guardado, f"boxplot_abandono_{variable}.jpg")
+    plt.savefig(ruta_imagen, bbox_inches="tight", pad_inches=0.2, format="jpg", dpi=300)
+
+    plt.show()
+    print(f"✅ Boxplot de {variable} guardado en {ruta_imagen}")
