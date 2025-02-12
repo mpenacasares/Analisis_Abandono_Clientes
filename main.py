@@ -1,12 +1,9 @@
 import matplotlib
 matplotlib.use("Agg")  # Forzar backend sin interfaz gráfica
-import matplotlib.pyplot as plt
 from src import eda
 from src import analisis as an
 from src import carga as ca
 from src import variables as va
-import pandas as pd
-import seaborn as sns
 
 print(f"-------------- EDA inicial ✨--------------")
 df = eda.extraer_datos_csv("datos/bruto/Bank_Customer_Churn_Prediction.csv")
