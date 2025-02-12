@@ -92,12 +92,18 @@ def preguntar_carga_mysql(df):
         respuesta = input("\n¿Quieres generar la base de datos en MySQL y cargar los datos? (Si/No): ").strip().lower()
         
         if respuesta == "si":
-            crear_base_datos()
-            insertar_datos(df)
-            print("✅ Base de datos creada y datos cargados en MySQL correctamente.")
-            break  # Sale del loop después de procesar
+            if crear_base_datos():  
+                if insertar_datos(df):  
+                    print("✅ Base de datos creada y datos cargados en MySQL correctamente.")
+                else:
+                    print("⚠ La base de datos fue creada, pero hubo un problema al cargar los datos.")
+            else:
+                print("❌ No se pudo crear la base de datos. Revisa la conexión con MySQL.")
+            break  
+
         elif respuesta == "no":
             print("⏩ Omitiendo la carga en MySQL. Proceso finalizado.")
-            break  # Sale del loop si el usuario decide no cargar
+            break 
+
         else:
-            print("⚠ Entrada no valida. Por favor, responde con 'Si' o 'No'.")
+            print("⚠ Entrada no válida. Por favor, responde con 'Si' o 'No'.")
