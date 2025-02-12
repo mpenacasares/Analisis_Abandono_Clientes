@@ -2,7 +2,7 @@ import matplotlib
 matplotlib.use("Agg")  # Forzar backend sin interfaz gráfica
 from src import eda
 from src import analisis as an
-from src import carga as ca
+from src import base_datos as bd
 from src import variables as va
 
 print(f"-------------- EDA inicial ✨--------------")
