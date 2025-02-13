@@ -1,8 +1,10 @@
+![Análisis de Abandono de Clientes - BlueBank](imagenes/logo-BlueBank.jpg)
+
 # 📊 **Análisis de Abandono de Clientes - BlueBank**
 
 ## 📌 **Descripción del Proyecto**
 
-Este proyecto analiza los factores que influyen en el **abandono de clientes en BlueBank**, una entidad financiera ficticia. Se busca identificar patrones y estrategias de retención basadas en datos para minimizar la pérdida de clientes.
+Este proyecto analiza los factores que influyen en el **abandono de clientes en BlueBank**, una entidad financiera ficticia. Se busca identificar patrones y estrategias de retención basadas en datos para minimizar la pérdida de clientes. Los datos utilizados en este análisis provienen del dataset [Bank Customer Churn Dataset](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset/data), disponible en Kaggle. Este dataset contiene información sobre clientes de un banco, incluyendo datos demográficos, financieros y su historial de permanencia o abandono.
 
 ## 🎯 **Objetivos**
 
