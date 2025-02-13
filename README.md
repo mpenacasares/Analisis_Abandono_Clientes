@@ -1,5 +1,3 @@
-![Análisis de Abandono de Clientes - BlueBank](imagenes/logo-BlueBank.jpg)
-
 # 📊 **Análisis de Abandono de Clientes - BlueBank**
 
 ## 📌 **Descripción del Proyecto**
