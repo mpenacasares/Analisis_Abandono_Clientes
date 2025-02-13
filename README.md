@@ -112,7 +112,7 @@ Este script realizará el análisis exploratorio de datos, generará visualizaci
 
 ## 📊 **Dashboard en Power BI**
 
-El dashboard en Power BI proporciona una visualización interactiva del análisis realizado. Para abrirlo, usa el archivo `analisis-clientes-bluebank.pbix` dentro de la carpeta `presentaciones/`. Este archivo se ha generado cargado el csv procesado `EDA_Bank_Customer_Churn_Prediction.csv` pero puedes importar estos mismos datos desde MySQL.
+El dashboard en Power BI proporciona una visualización interactiva del análisis realizado. Para abrirlo, usa el archivo `analisis-clientes-bluebank.pbix` dentro de la carpeta `presentaciones/`. Este archivo se ha generado cargando el csv procesado `EDA_Bank_Customer_Churn_Prediction.csv` pero puedes importar estos mismos datos desde MySQL.
 
 ## 📌 **Conclusiones del análisis**
 
@@ -122,30 +122,34 @@ El dashboard en Power BI proporciona una visualización interactiva del análisi
 ✅ **El saldo no parece ser un factor determinante**, aunque podría influir en estrategias de segmentación.
 
 ---
+
 ## 🚀 **Next Steps**
 
 El análisis actual proporciona una base sólida para comprender los factores que influyen en el abandono de clientes en **BlueBank**. Como siguientes pasos, se plantean mejoras y optimizaciones en el proyecto:
 
-✅ **📊 Definir consultas SQL clave:**  
-   - Elaborar consultas SQL que respondan preguntas estratégicas sobre el comportamiento de los clientes.  
-   - Automatizar la ejecución de estas consultas y almacenar los resultados en un archivo `.txt` para su posterior análisis.  
+✅ **📊 Definir consultas SQL clave:**
 
-✅ **📟 Visualización de consultas en la terminal:**  
-   - Seleccionar una consulta clave y mostrar los resultados directamente en la terminal.  
-   - Facilitar una vista rápida sin necesidad de abrir archivos adicionales.  
+- Elaborar consultas SQL que respondan preguntas estratégicas sobre el comportamiento de los clientes.
+- Automatizar la ejecución de estas consultas y almacenar los resultados en un archivo `.txt` para su posterior análisis.
 
-✅ **☁ Implementar la opción de base de datos en la nube:**  
-   - Ampliar el flujo del proyecto para permitir la **creación de la base de datos en la nube** (AWS RDS, Azure SQL Database, etc.).  
-   - De esta forma, el usuario podrá elegir entre:  
-     - 🛢 **Crear la base de datos en MySQL local.**  
-     - ☁ **Crear la base de datos en la nube.**  → Pregunta a incluir
-     - ❌ **No generar la base de datos.**  
+✅ **📟 Visualización de consultas en la terminal:**
+
+- Seleccionar una consulta clave y mostrar los resultados directamente en la terminal.
+- Facilitar una vista rápida sin necesidad de abrir archivos adicionales.
+
+✅ **☁ Implementar la opción de base de datos en la nube:**
+
+- Ampliar el flujo del proyecto para permitir la **creación de la base de datos en la nube** (AWS RDS, Azure SQL Database, etc.).
+- De esta forma, el usuario podrá elegir entre:
+  - 🛢 **Crear la base de datos en MySQL local.**
+  - ☁ **Crear la base de datos en la nube.** → Pregunta a incluir
+  - ❌ **No generar la base de datos.**
 
 Con estas mejoras, el proyecto no solo permitirá analizar el **abandono de clientes**, sino también **automatizar consultas, optimizar la gestión de datos y ampliar la infraestructura a la nube**. 🚀
 
 ---
 
 📌 **Autora:** Macarena Peña Casares  
-📌 **Repositorio:** [LinkedIN](https://www.linkedin.com/in/mpenacasares/)
-📌 **Repositorio:** [GitHub](https://github.com/mpenacasares)
+📌 **LinkedIN:** [Ver perfil](https://www.linkedin.com/in/mpenacasares/)
+📌 **Contacto:** m.penacasares@gmail.com
 📌 **Fecha:** Febrero 2025
