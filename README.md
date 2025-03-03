@@ -50,6 +50,7 @@ Contiene los notebooks utilizados para pruebas:
 
 ### **📁 presentaciones/**
 
+- `proyecto-analisis-abandono-clientes.pdf` → Archivo PDF con la presentación del proyecto.
 - `analisis-clientes-bluebank.pbix` → Archivo de Power BI con el dashboard final.
 
 ### **📁 src/**
